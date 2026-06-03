@@ -1,0 +1,78 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block start %}
+
+<div class="container">
+
+    <h2>Your Balance</h2>
+    <h1>₹{{ balance|default:"0.00" }}</h1>
+
+    <div class="income-expense-container">
+
+        <div>
+            <h4>INCOME</h4>
+            <p class="money plus">
+                ₹{{ income|default:"0.00" }}
+            </p>
+        </div>
+
+        <div class="divider"></div>
+
+        <div>
+            <h4>EXPENSES</h4>
+            <p class="money minus">
+                ₹{{ expense|default:"0.00" }}
+            </p>
+        </div>
+
+    </div>
+
+    <h3>History</h3>
+
+    <ul class="list">
+        {% for transaction in transactions %}
+            <li>
+                {{ transaction.description }}
+                <span>₹{{ transaction.amount }}</span>
+            </li>
+        {% empty %}
+            <li>No transactions yet</li>
+        {% endfor %}
+    </ul>
+
+    <h3>Add New Transaction</h3>
+
+    <form method="POST">
+        {% csrf_token %}
+
+        <div class="form-control">
+            <label>Description</label>
+            <input type="text"
+                   name="description"
+                   placeholder="Enter description..."
+                   required>
+        </div>
+
+        <div class="form-control">
+            <label>
+                Amount
+                <br>
+                <small>(-100 = expense, 100 = income)</small>
+            </label>
+
+            <input type="number"
+                   step="0.01"
+                   name="amount"
+                   placeholder="Enter amount..."
+                   required>
+        </div>
+
+        <button class="btn">
+            Add Transaction
+        </button>
+    </form>
+
+</div>
+
+{% endblock %}
