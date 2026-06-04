@@ -132,3 +132,121 @@ h3{
 small{
     color:#666;
 }
+.list li{
+    background:#fff;
+    box-shadow:0 2px 5px rgba(0,0,0,0.1);
+    color:#333;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    padding:12px 15px;
+    margin:10px 0;
+
+    border-radius:8px;
+    border-right:5px solid #6c5ce7;
+
+    transition:all 0.3s ease;
+}
+
+.list li:hover{
+    transform:translateY(-2px);
+}
+
+.transaction-right{
+    display:flex;
+    align-items:center;
+    gap:12px;
+}
+
+.delete-btn{
+    width:24px;
+    height:24px;
+
+    background:#e74c3c;
+    color:white;
+
+    border-radius:50%;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    text-decoration:none;
+    font-size:14px;
+    font-weight:bold;
+
+    opacity:0;
+    visibility:hidden;
+
+    transition:all 0.3s ease;
+}
+
+.list li:hover .delete-btn{
+    opacity:1;
+    visibility:visible;
+}
+
+.delete-btn:hover{
+    background:#c0392b;
+}
+.list li{
+    background:#fff;
+    box-shadow:0 2px 5px rgba(0,0,0,0.1);
+    color:#333;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    padding:12px 15px;
+    margin:10px 0;
+
+    border-radius:8px;
+    border-right:5px solid #6c5ce7;
+
+    transition:all 0.3s ease;
+}
+
+.list li:hover{
+    transform:translateY(-2px);
+}
+
+.transaction-right{
+    display:flex;
+    align-items:center;
+    gap:12px;
+}
+
+.delete-btn{
+    width:24px;
+    height:24px;
+
+    background:#e74c3c;
+    color:white;
+
+    border-radius:50%;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    text-decoration:none;
+    font-size:14px;
+    font-weight:bold;
+
+    opacity:0;
+    visibility:hidden;
+
+    transition:all 0.3s ease;
+}
+
+.list li:hover .delete-btn{
+    opacity:1;
+    visibility:visible;
+}
+
+.delete-btn:hover{
+    background:#c0392b;
+}
