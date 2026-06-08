@@ -32,7 +32,7 @@
 
     <ul class="list">
     {% for transaction in transactions %}
-        <li>
+       <li class="{% if transaction.amount < 0 %}expense{% else %}income{% endif %}">
             <span>{{ transaction.description }}</span>
 
             <div class="transaction-right">

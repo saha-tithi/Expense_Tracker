@@ -28,8 +28,15 @@ def index(request):
 
     transactions = Transaction.objects.all()
 
+    income = sum(t.amount for t in transactions if t.amount > 0)
+    expense = sum(abs(t.amount) for t in transactions if t.amount < 0)
+    balance = income - expense
+
     return render(request, 'index.html', {
-        'transactions': transactions
+        'transactions': transactions,
+        'income': income,
+        'expense': expense,
+        'balance': balance,
     })
 def delete_transaction(request, uuid):
     transaction = get_object_or_404(
